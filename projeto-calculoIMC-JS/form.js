@@ -1,41 +1,21 @@
-var addPatient = document.querySelector('#adicionar-paciente');
+const addPatient = document.querySelector('#add-patient');
 
 addPatient.addEventListener('click', (event) =>{
     event.preventDefault();
 
-    const form = document.querySelector('#form-adiciona');
+    const form = document.querySelector('#form-add');
+    var patient = getPatientFromForm(form);
 
-    var pacient = getPacientFromForm(form);
+    const patientTable = document.querySelector('#patient-table');
 
-    const patienteTr = document.createElement('tr');
-
-    const nameTd = document.createElement('td');
-    const weightTd = document.createElement('td');
-    const heightTd = document.createElement('td');
-    const fatTd = document.createElement('td');
-    const imcTd = document.createElement('td');
-
-    nameTd.textContent = pacient; 
-    weightTd.textContent = pacient; 
-    heightTd.textContent = pacient;
-    fatTd.textContent = pacient;
-    imcTd.textContent = calculateIMC(peso, altura);
-
-    patienteTr.appendChild(nameTd);
-    patienteTr.appendChild(weightTd);
-    patienteTr.appendChild(heightTd);
-    patienteTr.appendChild(fatTd);
-    patienteTr.appendChild(imcTd);
-
-    const patienteTable = document.querySelector('#tabela-pacientes');
-
-    patienteTable.appendChild(patienteTr);
+    patientTable.appendChild(createTr(patient));
+    form.reset();
 
 })
 
-function getPacientFromForm(form){
+function getPatientFromForm(form){
 
-    var pacient = {
+    var patient = {
         name: form.nome.value,
         weight: form.peso.value,
         height: form.altura.value,
@@ -43,6 +23,35 @@ function getPacientFromForm(form){
         imc: calculateIMC(form.peso.value, form.altura.value)
     } 
 
-    return pacient;
+    return patient;
 
+}
+
+function createTr(patient){
+    var patientTr = document.createElement('tr');
+    patientTr.classList.add('paciente');
+
+    //Adiciona os dados do TD dentro da TR.
+    patientTr.appendChild(createTd(patient.name, 'info-name'));
+    patientTr.appendChild(createTd(patient.weight, 'info-peso'));
+    patientTr.appendChild(createTd(patient.height, 'info-altura'));
+    patientTr.appendChild(createTd(patient.fat, 'info-gordura'));
+    patientTr.appendChild(createTd(patient.imc, 'info-imc'));
+
+    return patientTr;
+    
+}
+
+function createTd(data, classe){
+    const td = document.createElement('td');
+    td.textContent = data;
+    td.classList.add(classe);
+
+    return td;
+}
+
+function validatingPatient(patient){
+    if(){
+        return true;
+    }
 }
