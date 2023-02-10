@@ -5,45 +5,53 @@ for (var i = 0; i < patients.length; i++) {
     const patient = patients[i];
 
     const tdPeso = patient.querySelector(".info-peso");
-    var peso = tdPeso.textContent;
+    var weight = tdPeso.textContent;
 
     const tdAltura = patient.querySelector(".info-altura");
-    var altura = tdAltura.textContent;
+    var height = tdAltura.textContent;
 
     const tdImc = patient.querySelector(".info-imc");
 
-    var weightIsValid = validatingWeight(peso);
-    var alturaEhValida = true;
+    var weightIsValid = validatingWeight(weight);
+    var heightIsValid = validatingHeight(height);
     
-    if(! weightIsValid){
+    if(!weightIsValid){
         console.log("Peso inválido!");
-        pesoEhValido = false;
+        weightIsValid = false;
         tdImc.textContent = "Peso inválido";
         patient.classList.add("invalid-patient");
     }
 
-    else if (altura <= 0 || altura >= 3.00) {
+    else if (!heightIsValid) {
         console.log("Altura inválida!");
-        alturaEhValida = false;
+        heightIsValid = false;
         tdImc.textContent = "Altura inválida";
         patient.classList.add("invalid-patient");
     }
 
-     else if (pesoEhValido && alturaEhValida) {
-        var imc = calculateIMC(peso,altura);
+     else if (weightIsValid && heightIsValid) {
+        var imc = calculateIMC(weight,height);
         tdImc.textContent = imc;
     }
 }
 
-function calculateIMC(peso, altura){
+function calculateIMC(weight, height){
     var imc = 0;
 
-    imc = peso / (altura * altura);
+    imc = weight / (height * height);
     return imc.toFixed(2);
 }
 
-function validatingWeight(peso){
-    if(peso >=0 && peso < 1000){
+function validatingWeight(weight){
+    if(weight > 0 && weight < 1000){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function validatingHeight(height){
+    if(height > 0 && height < 3.00){
         return true;
     }else{
         return false;

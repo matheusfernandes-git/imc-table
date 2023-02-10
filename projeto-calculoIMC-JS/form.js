@@ -51,7 +51,5 @@ function createTd(data, classe){
 }
 
 function validatingPatient(patient){
-    if(){
-        return true;
-    }
+    
 }
