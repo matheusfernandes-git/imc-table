@@ -1,7 +1,6 @@
 var button = document.querySelector('#remove-patient');
-var pacientes = document.querySelectorAll(".paciente");
-var novoPaciente = document.querySelector(".new-paciente");
+var patientsTable = document.querySelector('#patient-table');
 
     button.addEventListener("click", function() {
-         pacientes.removeChild(novoPaciente);
+         
 });
