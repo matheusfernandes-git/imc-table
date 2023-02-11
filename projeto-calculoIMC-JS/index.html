@@ -74,6 +74,7 @@
 		
 	<section class="container">
 		<h2 id="titulo-form">Adicionar novo paciente</h2>
+		<ul id="msg-errors"></ul>
 		<form id="form-add">
 			<div class="grupo">
 				<label for="nome">Nome:</label>
@@ -92,11 +93,16 @@
 				<input id="gordura" type="text" placeholder="digite a porcentagem de gordura do seu paciente" class="campo campo-medio">
 			</div>
 
-			<button id="add-patient" class="botao bto-principal">Adicionar</button>
 		</form>
 	</section>
+	
+	<div id="container-buttons" >
+		<button id="add-patient" class="botao bto-principal">Adicionar</button>
+		<button id="remove-patient" class="botao bto-remove">Remover paciente</button>
+	</div>
 
 	<script src="imc.js"></script>
 	<script src="form.js"></script>
+	<script src="removePatient.js"></script>
 	</body>
 </html>

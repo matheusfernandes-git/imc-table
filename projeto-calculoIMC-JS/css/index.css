@@ -38,6 +38,11 @@ header .container:before{
 	margin: 0 auto;
 }
 
+#msg-errors{
+	color: #ff0000;
+	font-size: 1.1em;
+}
+
 section{
 	margin: 2em 0;
 	overflow: hidden;
@@ -96,6 +101,11 @@ label{
 	padding: 10px 0px;
 }
 
+#container-buttons{
+	display: inline-block;
+	margin-left: 20%;
+}
+
 button{
 	padding: .5em 2em;
 	border: 0;
@@ -106,9 +116,6 @@ button{
 	margin-top: -3px;
 	color: #fff;
 	background-color:#0c8cd3;
-	border-color: #04324c;
-	width: 20%;
-    display: block;
     clear: both;
     margin: 10px 0px;
 
