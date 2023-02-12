@@ -118,7 +118,6 @@ button{
 	background-color:#0c8cd3;
     clear: both;
     margin: 10px 0px;
-
 }
 
 button:active{
@@ -138,4 +137,9 @@ button[disabled=disabled], button:disabled {
 
 .invalid-patient{
 	color: red;
+}
+
+.fadeOut{
+	opacity: 0;
+	transition: 0.5s;
 }
