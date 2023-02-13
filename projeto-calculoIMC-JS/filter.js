@@ -9,8 +9,9 @@ inputFilter.addEventListener('input', () =>{
            var patient = patients[i];
            var tdName = patient.querySelector('.info-nome');
            var name = tdName.textContent;
+           var expression = new RegExp(inputFilter.value, 'i');
            
-           if(name != inputFilter.value){
+           if(!expression.test(name)){
                 patient.classList.add('hideName');
            }else{
                 patient.classList.remove('hideName');
@@ -23,4 +24,5 @@ inputFilter.addEventListener('input', () =>{
             patient.classList.remove('hideName');
         }
     }
+
 });
