@@ -94,6 +94,10 @@ section h2{
 	margin-bottom: .5em;
 }
 
+#label-filter{
+	margin-bottom: 8px;
+}
+
 table{
 	width: 100%;
 	margin-bottom : .5em;
@@ -170,7 +174,7 @@ button[disabled=disabled], button:disabled {
 }
 
 button:hover{
-	background-color: #4fc98c;
+	background-color: #64af2e;
 }
 
 .adicionar-paciente{
