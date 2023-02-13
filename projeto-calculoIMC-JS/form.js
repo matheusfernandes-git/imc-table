@@ -43,7 +43,7 @@ function getPatientFromForm(form){
 
 function createTr(patient){
     var patientTr = document.createElement('tr');
-    patientTr.classList.add('new-paciente');
+    patientTr.classList.add('paciente');
     
     //Adiciona os dados do TD dentro da TR.
     patientTr.appendChild(createTd(patient.name, 'info-name'));

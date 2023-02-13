@@ -143,3 +143,12 @@ button[disabled=disabled], button:disabled {
 	opacity: 0;
 	transition: 0.5s;
 }
+
+#filter-table{
+	margin-bottom: 15px;
+	height: 30px;
+}
+
+.hideName{
+	display: none;
+}
