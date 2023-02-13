@@ -16,38 +16,43 @@ header{
 
 #container-header{
 	display: inline-block;
+	margin-left: 10px;
+}
+
+#container-img{
+	display: flex;
+	margin-left: 40px;
+	margin-top: -29px;
 }
 
 header h1{
 	font-size: 2em;
-	padding-top: 5px;
-	text-align: center;
+	padding-top: 10px;
 }
 
 header img{
-	width: 4%;
+	width: 5%;
 	max-width: 600px;
+	margin: auto;
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 550px){
 
 	header h1{
 		padding-top: 0px;
 	}
 
 	#container-header{
-		margin-top: 8px;
-	}
-}
-
-@media screen and (min-width: 600px) and (max-width: 660px){
-	header h1{
-		padding-top: 0px;
-		margin-top: 0px;
+		margin-top: 10px;
 	}
 
-	#container-header{
-		margin-top: 7px;
+	#container-img{
+		margin-left: 90px;
+		margin-top: -29px;
+	}
+
+	header img{
+		width: 6%;
 	}
 }
 
