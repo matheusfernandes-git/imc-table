@@ -9,16 +9,17 @@ body{
 
 header{
 	background-color: #333;
-	height: 3em;
+	height: 4em;
 	color: #FFF;
 	margin-bottom: 1em;
 }
 
 header h1{
 	font-size: 2em;
-	display:inline-block;
-	vertical-align:	middle;
+	text-align: center;
+	padding-top: 10px;
 }
+
 header h2{
 	font-size: 2em;
 	display:inline-block;
@@ -49,10 +50,11 @@ section{
 }
 
 section h2{
-	font-size: 3em;
+	font-size: 2.8em;
 	display: block;
 	padding-bottom: .5em;
 	border-bottom: 1px solid #ccc;
+	margin-top: 30px;
 	margin-bottom: .5em;
 }
 
@@ -129,6 +131,10 @@ button[disabled=disabled], button:disabled {
     background-color: gray;
 	border-color: darkgray;
 
+}
+
+button:hover{
+	background-color: #106fa1;
 }
 
 .adicionar-paciente{
