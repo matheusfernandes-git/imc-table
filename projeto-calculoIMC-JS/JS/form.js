@@ -6,6 +6,7 @@ addPatient.addEventListener('click', (event) =>{
     const form = document.querySelector('#form-add');
     var patient = getPatientFromForm(form);
     
+    //Verifica os erros
     
     var errors = validatingPatient(patient);
     console.log(errors)
@@ -14,10 +15,7 @@ addPatient.addEventListener('click', (event) =>{
         return;          
     }
 
-    //Adicionando o paciente na tabela
-    const patientTable = document.querySelector('#patient-table');
-
-    patientTable.appendChild(createTr(patient));
+    addPatientTable(patient);
 
     form.reset();
 
@@ -26,6 +24,11 @@ addPatient.addEventListener('click', (event) =>{
     
 });
 
+function addPatientTable(patient) {
+    var pacienteTr = createTr(patient);
+    var tabela = document.querySelector("#patient-table");
+    tabela.appendChild(pacienteTr);
+}
 
 function getPatientFromForm(form){
     
