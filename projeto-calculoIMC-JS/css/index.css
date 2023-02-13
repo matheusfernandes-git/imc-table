@@ -14,10 +14,41 @@ header{
 	margin-bottom: 1em;
 }
 
+#container-header{
+	display: inline-block;
+}
+
 header h1{
 	font-size: 2em;
+	padding-top: 5px;
 	text-align: center;
-	padding-top: 10px;
+}
+
+header img{
+	width: 4%;
+	max-width: 600px;
+}
+
+@media screen and (max-width: 600px){
+
+	header h1{
+		padding-top: 0px;
+	}
+
+	#container-header{
+		margin-top: 8px;
+	}
+}
+
+@media screen and (min-width: 600px) and (max-width: 660px){
+	header h1{
+		padding-top: 0px;
+		margin-top: 0px;
+	}
+
+	#container-header{
+		margin-top: 7px;
+	}
 }
 
 header h2{
@@ -117,7 +148,7 @@ button{
 	margin: 0;
 	margin-top: -3px;
 	color: #fff;
-	background-color:#0c8cd3;
+	background-color:#38C07C;
     clear: both;
     margin: 10px 0px;
 }
@@ -130,11 +161,10 @@ button:active{
 button[disabled=disabled], button:disabled {
     background-color: gray;
 	border-color: darkgray;
-
 }
 
 button:hover{
-	background-color: #106fa1;
+	background-color: #4fc98c;
 }
 
 .adicionar-paciente{
