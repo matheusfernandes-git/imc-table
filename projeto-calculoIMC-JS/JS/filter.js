@@ -1,6 +1,6 @@
 var inputFilter = document.querySelector('#filter-table');
 
-inputFilter.addEventListener('input', () =>{
+inputFilter.addEventListener('input', () => {
    inputFilter.value;
    var patients = document.querySelectorAll('.paciente');
 

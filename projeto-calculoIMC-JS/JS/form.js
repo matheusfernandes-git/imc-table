@@ -24,11 +24,6 @@ addPatient.addEventListener('click', (event) =>{
     
 });
 
-function addPatientTable(patient) {
-    var pacienteTr = createTr(patient);
-    var tabela = document.querySelector("#patient-table");
-    tabela.appendChild(pacienteTr);
-}
 
 function getPatientFromForm(form){
     
@@ -66,6 +61,12 @@ function createTd(data, classe){
     td.classList.add(classe);
     
     return td;
+}
+
+function addPatientTable(patient) {
+    var pacienteTr = createTr(patient);
+    var tabela = document.querySelector("#patient-table");
+    tabela.appendChild(pacienteTr);
 }
 
 function validatingPatient(patient){
