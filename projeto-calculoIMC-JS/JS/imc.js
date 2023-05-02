@@ -1,4 +1,5 @@
 const patients = document.querySelectorAll(".paciente");
+console.log(patients);
 
 for (var i = 0; i < patients.length; i++) {
 
@@ -11,10 +12,12 @@ for (var i = 0; i < patients.length; i++) {
     var height = tdAltura.textContent;
 
     const tdImc = patient.querySelector(".info-imc");
+    const tdSituation = patient.querySelector(".info-situacao");
+    var imc = tdImc.textContent;
 
     var weightIsValid = validatingWeight(weight);
     var heightIsValid = validatingHeight(height);
-    
+
     if(!weightIsValid){
         console.log("Peso inválido!");
         weightIsValid = false;
@@ -29,17 +32,18 @@ for (var i = 0; i < patients.length; i++) {
         patient.classList.add("invalid-patient");
     }
 
-     else if (weightIsValid && heightIsValid) {
+    else if (weightIsValid && heightIsValid ) {
         var imc = calculateIMC(weight,height);
+        validatingImc(imc, tdSituation);
         tdImc.textContent = imc;
     }
 }
 
 function calculateIMC(weight, height){
     var imc = 0;
-
     imc = weight / (height * height);
     return imc.toFixed(2);
+
 }
 
 function validatingWeight(weight){
@@ -56,4 +60,19 @@ function validatingHeight(height){
     }else{
         return false;
     }
+}
+
+function validatingImc(imc, tdSituation){
+    if(imc < 18.5){
+        tdSituation.textContent = 'MAGREZA'
+    }else if(imc < 24.9){
+        tdSituation.textContent = 'NORMAL'
+    }else if(imc > 25.0 && imc < 29.9){
+        tdSituation.textContent = 'SOBREPESO'
+    }else if(imc > 30.0 && imc < 39.9){
+        tdSituation.textContent = 'OBESIDADE'
+    }else{
+        tdSituation.textContent = 'OBESIDADE GRAVE'
+    }
+    
 }

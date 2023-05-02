@@ -7,7 +7,6 @@ addPatient.addEventListener('click', (event) =>{
     var patient = getPatientFromForm(form);
     
     //Verifica os erros
-    
     var errors = validatingPatient(patient);
     console.log(errors)
     if(errors.length > 0){
@@ -26,13 +25,13 @@ addPatient.addEventListener('click', (event) =>{
 
 
 function getPatientFromForm(form){
-    
     var patient = {
         name: form.nome.value,
         weight: form.peso.value,
         height: form.altura.value,
         fat: form.gordura.value,
-        imc: calculateIMC(form.peso.value, form.altura.value)
+        imc: calculateIMC(form.peso.value, form.altura.value),
+        situation: 
     } 
     
     return patient;
@@ -49,6 +48,7 @@ function createTr(patient){
     patientTr.appendChild(createTd(patient.height, 'info-altura'));
     patientTr.appendChild(createTd(patient.fat, 'info-gordura'));
     patientTr.appendChild(createTd(patient.imc, 'info-imc'));
+    patientTr.appendChild(createTd(patient.situation, 'info-situacao'));
     
     return patientTr;
     
@@ -85,7 +85,7 @@ function validatingPatient(patient){
         errors.push('Altura é inválida!'); 
     }
 
-    if(patient.fat === '' ){
+    if(patient.fat === ''){
         errors.push('Insira uma % de gordura!');
     }
 
@@ -94,7 +94,6 @@ function validatingPatient(patient){
 }
 
 function displayMsgError(erros){
-
     var errorsUl = document.querySelector("#msg-errors");
     errorsUl.innerHTML = '';
 

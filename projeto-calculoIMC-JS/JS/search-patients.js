@@ -15,6 +15,7 @@ buttonSearch.addEventListener("click", () => {
             var patients = JSON.parse(resp);
     
             patients.forEach((patient) => {
+                console.log(patient)
                 addPatientTable(patient);
             });
         }else{
