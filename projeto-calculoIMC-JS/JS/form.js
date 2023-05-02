@@ -4,8 +4,9 @@ addPatient.addEventListener('click', (event) =>{
     event.preventDefault();
     
     const form = document.querySelector('#form-add');
-    var patient = getPatientFromForm(form);
-    
+    const situation = document.querySelector('.info-situacao')
+    var patient = getPatientFromForm(form, situation);
+
     //Verifica os erros
     var errors = validatingPatient(patient);
     console.log(errors)
@@ -23,16 +24,17 @@ addPatient.addEventListener('click', (event) =>{
     
 });
 
-
-function getPatientFromForm(form){
+function getPatientFromForm(form, situation){
     var patient = {
         name: form.nome.value,
         weight: form.peso.value,
         height: form.altura.value,
         fat: form.gordura.value,
         imc: calculateIMC(form.peso.value, form.altura.value),
-        situation: 
+        situation: validatingImc(calculateIMC(form.peso.value, form.altura.value), situation)
     } 
+    
+    console.log(patient)
     
     return patient;
     
@@ -67,10 +69,10 @@ function addPatientTable(patient) {
     var pacienteTr = createTr(patient);
     var tabela = document.querySelector("#patient-table");
     tabela.appendChild(pacienteTr);
+
 }
 
 function validatingPatient(patient){
-    
     var errors = [];
 
     if(patient.name === ''){

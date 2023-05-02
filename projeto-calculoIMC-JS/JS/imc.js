@@ -1,7 +1,7 @@
 const patients = document.querySelectorAll(".paciente");
-console.log(patients);
+console.log(patients)
 
-for (var i = 0; i < patients.length; i++) {
+for(var i = 0; i < patients.length; i++) {
 
     const patient = patients[i];
 
@@ -13,7 +13,6 @@ for (var i = 0; i < patients.length; i++) {
 
     const tdImc = patient.querySelector(".info-imc");
     const tdSituation = patient.querySelector(".info-situacao");
-    var imc = tdImc.textContent;
 
     var weightIsValid = validatingWeight(weight);
     var heightIsValid = validatingHeight(height);
@@ -36,12 +35,12 @@ for (var i = 0; i < patients.length; i++) {
         var imc = calculateIMC(weight,height);
         validatingImc(imc, tdSituation);
         tdImc.textContent = imc;
-    }
 }
 
 function calculateIMC(weight, height){
     var imc = 0;
     imc = weight / (height * height);
+
     return imc.toFixed(2);
 
 }
@@ -74,5 +73,5 @@ function validatingImc(imc, tdSituation){
     }else{
         tdSituation.textContent = 'OBESIDADE GRAVE'
     }
-    
+    }
 }
