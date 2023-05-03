@@ -16,13 +16,14 @@ header{
 
 #container-header{
 	display: inline-block;
-	margin-left: 10px;
+	margin-left: 6%;
 }
 
 #container-img{
 	display: flex;
-	margin-left: 40px;
-	margin-top: -29px;
+	align-items: center;
+	justify-content: center;
+	margin-top: -30px;	
 }
 
 header h1{
@@ -31,15 +32,12 @@ header h1{
 }
 
 header img{
-	width: 5%;
-	max-width: 600px;
-	margin: auto;
+	width: 5.7%;
 }
 
-header h2{
+header h1{
 	font-size: 2em;
-	display:inline-block;
-	vertical-align:	middle;
+	margin-left: 8%;
 }
 
 header .container:before{
@@ -226,13 +224,8 @@ footer h1{
 		margin-top: 10px;
 	}
 
-	#container-img{
-		margin-left: 95px;
-		margin-top: -29px;
-	}
-
 	header img{
-		width: 6%;
+		width: 5.5%;
 	}
 
 	.container{
@@ -266,4 +259,15 @@ footer h1{
 		margin: 0;
 	}
 	
+}
+
+@media (max-width: 560px){
+	#container-img{
+		margin-left: 10%;
+		margin-top: -28px;
+	}
+
+	header img{
+		width: 5.8%;
+	}
 }
