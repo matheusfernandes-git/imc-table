@@ -1,11 +1,11 @@
 const addPatient = document.querySelector('#add-patient');
+const patientsss = document.querySelectorAll(".paciente");
 
 addPatient.addEventListener('click', (event) =>{
     event.preventDefault();
     
     const form = document.querySelector('#form-add');
-    const situation = document.querySelector('.info-situacao')
-    var patient = getPatientFromForm(form, situation);
+    let patient = getPatientFromForm(form);
 
     //Verifica os erros
     var errors = validatingPatient(patient);
@@ -24,26 +24,23 @@ addPatient.addEventListener('click', (event) =>{
     
 });
 
-function getPatientFromForm(form, situation){
+function getPatientFromForm(form){
     var patient = {
         name: form.nome.value,
         weight: form.peso.value,
         height: form.altura.value,
         fat: form.gordura.value,
         imc: calculateIMC(form.peso.value, form.altura.value),
-        situation: validatingImc(calculateIMC(form.peso.value, form.altura.value), situation)
-    } 
-    
-    console.log(patient)
-    
+    }
+
     return patient;
-    
+  
 }
 
 function createTr(patient){
-    var patientTr = document.createElement('tr');
-    patientTr.classList.add('paciente');
-    
+    let patientTr = document.createElement('tr');
+    patientTr.classList.add('paciente')
+
     //Adiciona os dados do TD dentro da TR.
     patientTr.appendChild(createTd(patient.name, 'info-name'));
     patientTr.appendChild(createTd(patient.weight, 'info-peso'));
@@ -51,11 +48,28 @@ function createTr(patient){
     patientTr.appendChild(createTd(patient.fat, 'info-gordura'));
     patientTr.appendChild(createTd(patient.imc, 'info-imc'));
     patientTr.appendChild(createTd(patient.situation, 'info-situacao'));
-    
+
     return patientTr;
-    
+
 }
 
+function teste(){
+
+    const teste = patientTr.querySelector('.info-situacao')
+    if(imc < 18.5){
+        teste.textContent = 'MAGREZA'
+    }else if(imc < 24.9){
+        teste.textContent = 'NORMAL'
+    }else if(imc > 25.0 && imc < 29.9){
+        teste.textContent = 'SOBREPESO'
+    }else if(imc > 30.0 && imc < 39.9){
+        teste.textContent = 'OBESIDADE'
+    }else{
+        teste.textContent = 'OBESIDADE GRAVE'
+    }
+
+    return patientTr;
+}
 
 function createTd(data, classe){
     const td = document.createElement('td');

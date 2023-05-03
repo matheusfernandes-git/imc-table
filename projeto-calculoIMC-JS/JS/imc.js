@@ -1,5 +1,4 @@
 const patients = document.querySelectorAll(".paciente");
-console.log(patients)
 
 for(var i = 0; i < patients.length; i++) {
 
@@ -31,16 +30,17 @@ for(var i = 0; i < patients.length; i++) {
         patient.classList.add("invalid-patient");
     }
 
-    else if (weightIsValid && heightIsValid ) {
-        var imc = calculateIMC(weight,height);
-        validatingImc(imc, tdSituation);
+    else if (weightIsValid && heightIsValid) {
+        var imc = calculateIMC(weight, height);
+        var imcIsvalid = validatingImc(imc, tdSituation);
         tdImc.textContent = imc;
-}
+    }
+
 
 function calculateIMC(weight, height){
     var imc = 0;
     imc = weight / (height * height);
-
+    
     return imc.toFixed(2);
 
 }
