@@ -28,7 +28,6 @@ function getPatientFromForm(form){
         name: form.nome.value,
         weight: form.peso.value,
         height: form.altura.value,
-        fat: form.gordura.value,
         imc: calculateIMC(form.peso.value, form.altura.value),
     }
 
@@ -44,7 +43,6 @@ function createTr(patient){
     patientTr.appendChild(createTd(patient.name, 'info-name'));
     patientTr.appendChild(createTd(patient.weight, 'info-peso'));
     patientTr.appendChild(createTd(patient.height, 'info-altura'));
-    patientTr.appendChild(createTd(patient.fat, 'info-gordura'));
     patientTr.appendChild(createTd(patient.imc, 'info-imc'));
     patientTr.appendChild(createTd(patient.situation, 'info-situacao'));
 
@@ -84,10 +82,6 @@ function validatingPatient(patient){
     
     if(!validatingHeight(patient.height)){
         errors.push('Altura é inválida!'); 
-    }
-
-    if(patient.fat === ''){
-        errors.push('Insira uma % de gordura!');
     }
 
     return errors;
