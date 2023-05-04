@@ -7,6 +7,6 @@ button.addEventListener('click', () => {
         table.lastElementChild.remove();
     }, 500);
 
-})
+});
 
 
