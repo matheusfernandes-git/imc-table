@@ -1,4 +1,4 @@
-![thumbtabuada](https://user-images.githubusercontent.com/100592742/214454394-48a81a35-5add-4763-a1a3-36e550ad65b2.png)
+![imctable](https://user-images.githubusercontent.com/100592742/236352058-3b767492-777c-4a74-9738-c0775479143d.png)
 <h1>IMC Table</h1>
 <p>In this project you can add a patient to the imc table, remove a patient, filter already added patients and check their classification.</p>
 
