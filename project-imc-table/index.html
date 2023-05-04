@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Lorem ipsum Nutrição</title>
+	<link rel="icon" href="img/favicon_io/android-chrome-512x512.png" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+</head>
+
+<body>
+	<header>
+		<div id="container-header">
+			<h1>Lorem Nutrição</h1>
+			<div id="container-img">
+				<img src="img/maca.png" alt="logo" />
+			</div>
+		</div>
+	</header>
+	<main>
+		<section class="container">
+			<div>
+				<h2>Pacientes</h2>
+				<label id="label-filter" for="filter-table">Filtrar pacientes:</label>
+				<input type="text" name="filter" id="filter-table" placeholder="Digite o nome do paciente" />
+				<table>
+					<thead>
+						<tr>
+							<th>Nome</th>
+							<th>Peso(kg)</th>
+							<th>Altura(m)</th>
+							<th>IMC</th>
+							<th>Situação</th>
+						</tr>
+					</thead>
+					<tbody id="patient-table">
+						<tr class="paciente">
+							<td class="info-nome">Paulo</td>
+							<td class="info-peso">92</td>
+							<td class="info-altura">2.00</td>
+							<td class="info-imc">0</td>
+							<td class="info-situacao"></td>
+						</tr>
+						<tr class="paciente">
+							<td class="info-nome">João</td>
+							<td class="info-peso">80</td>
+							<td class="info-altura">1.72</td>
+							<td class="info-imc">0</td>
+							<td class="info-situacao"></td>
+						</tr>
+						<tr class="paciente">
+							<td class="info-nome">Erica</td>
+							<td class="info-peso">100</td>
+							<td class="info-altura">1.64</td>
+							<td class="info-imc">0</td>
+							<td class="info-situacao"></td>
+						</tr>
+						<tr class="paciente">
+							<td class="info-nome">Felipe</td>
+							<td class="info-peso">50</td>
+							<td class="info-altura">1.70</td>
+							<td class="info-imc">0</td>
+							<td class="info-situacao"></td>
+						</tr>
+					</tbody>
+				</table>
+				<span id="error-ajax" class="hideName">Erro ao buscar pacientes!</span>
+				<button id="search-patient" class="botao bto-principal">
+					Buscar pacientes
+				</button>
+				<h2>Veja sua classificação aqui</h2>
+				<table class="table-classification">
+					<thead>
+						<tr>
+							<th>IMC</th>
+							<th>Classificação</th>
+						</tr>
+					</thead>
+					<tbody id="situation-table">
+						<tr class="classification">
+							<td class="info-imcTotal">MENOR QUE 18,5</td>
+							<td class="info-classification">MAGREZA</td>
+						</tr>
+						<tr class="classification">
+							<td class="info-imcTotal">ENTRE 18,5 E 24,9</td>
+							<td class="info-classification">NORMAL</td>
+						</tr>
+						<tr class="classification">
+							<td class="info-imcTotal">ENTRE 25,0 E 29,9</td>
+							<td class="info-classification">SOBREPESO</td>
+						</tr>
+						<tr class="classification">
+							<td class="info-imcTotal">ENTRE 30,0 E 39,9</td>
+							<td class="info-classification">OBESIDADE</td>
+						</tr>
+						<tr class="classification">
+							<td class="info-imcTotal">MAIOR QUE 40,0</td>
+							<td class="info-classification">OBESIDADE GRAVE</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+	</main>
+
+	<section class="container-form">
+		<div>
+			<h2 id="titulo-form">Adicionar novo paciente</h2>
+			<ul id="msg-errors"></ul>
+			<form id="form-add">
+				<div class="grupo">
+					<label for="nome">Nome:</label>
+					<input id="nome" name="nome" type="text" placeholder="digite o nome do paciente" class="campo" />
+				</div>
+				<div class="grupo">
+					<label for="peso">Peso:</label>
+					<input id="peso" name="peso" type="text" placeholder="digite o peso do paciente"
+						class="campo campo-medio" />
+				</div>
+				<div class="grupo">
+					<label for="altura">Altura:</label>
+					<input id="altura" name="altura" type="text" placeholder="digite a altura do paciente"
+						class="campo campo-medio" />
+				</div>
+			</form>
+		</div>
+	</section>
+
+	<div id="container-buttons">
+		<button id="add-patient" class="botao bto-principal">Adicionar</button>
+		<button id="remove-patients" class="botao bto-remove">
+			Remover paciente
+		</button>
+	</div>
+
+	<script src="JS/imc.js"></script>
+	<script src="JS/form.js"></script>
+	<script src="JS/remove.js"></script>
+	<script src="JS/filter.js"></script>
+	<script src="JS/search-patients.js"></script>
+</body>
+
+</html>
