@@ -13,6 +13,7 @@ buttonSearch.addEventListener("click", () => {
             errorAjax.classList.add('hideName');
             var resp = xhr.responseText;
             var patients = JSON.parse(resp);
+            console.log(patients)
     
             patients.forEach((patient) => {
                 console.log(patient)

@@ -1,13 +1,12 @@
 var table = document.querySelector("#patient-table");
 var button = document.querySelector('#remove-patients');
 
-button.addEventListener('click', () =>{   
+button.addEventListener('click', () => {
     table.lastElementChild.classList.add("fadeOut");
-
-    setTimeout(function() {
+    setTimeout(function () {
         table.lastElementChild.remove();
     }, 500);
 
 })
 
-   
+
