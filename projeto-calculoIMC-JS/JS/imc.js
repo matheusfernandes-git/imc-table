@@ -42,7 +42,6 @@ function calculateIMC(weight, height){
     imc = weight / (height * height);
     
     return imc.toFixed(2);
-
 }
 
 function validatingWeight(weight){

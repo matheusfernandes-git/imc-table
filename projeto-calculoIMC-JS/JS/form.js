@@ -1,5 +1,4 @@
 const addPatient = document.querySelector('#add-patient');
-const patientsss = document.querySelectorAll(".paciente");
 
 addPatient.addEventListener('click', (event) =>{
     event.preventDefault();
@@ -39,7 +38,7 @@ function getPatientFromForm(form){
 
 function createTr(patient){
     let patientTr = document.createElement('tr');
-    patientTr.classList.add('paciente')
+    patientTr.classList.add('paciente');
 
     //Adiciona os dados do TD dentro da TR.
     patientTr.appendChild(createTd(patient.name, 'info-name'));
@@ -49,26 +48,12 @@ function createTr(patient){
     patientTr.appendChild(createTd(patient.imc, 'info-imc'));
     patientTr.appendChild(createTd(patient.situation, 'info-situacao'));
 
+    let fildSituation = patientTr.querySelector('.info-situacao');
+    let imc = patient.imc
+    validatingImc(imc, fildSituation);  
+ 
     return patientTr;
 
-}
-
-function teste(){
-
-    const teste = patientTr.querySelector('.info-situacao')
-    if(imc < 18.5){
-        teste.textContent = 'MAGREZA'
-    }else if(imc < 24.9){
-        teste.textContent = 'NORMAL'
-    }else if(imc > 25.0 && imc < 29.9){
-        teste.textContent = 'SOBREPESO'
-    }else if(imc > 30.0 && imc < 39.9){
-        teste.textContent = 'OBESIDADE'
-    }else{
-        teste.textContent = 'OBESIDADE GRAVE'
-    }
-
-    return patientTr;
 }
 
 function createTd(data, classe){
