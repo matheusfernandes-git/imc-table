@@ -1,33 +1,25 @@
-var buttonSearch = document.querySelector("#search-patient");
+var buttonSearch  = document.querySelector("#search-patient");
 
-buttonSearch.addEventListener("click", () => {
-
+buttonSearch .addEventListener("click", () => {
     var xhr = new XMLHttpRequest();
 
-    xhr.open("GET", "https://raw.githubusercontent.com/loresgarcia/Pacientes-API/master/pacientes.json");
+    xhr.open("GET", "https://my-json-server.typicode.com/matheusfernandes-git/fakeapi-testes/pacientes");
 
     xhr.addEventListener("load", function() {
-        var errorAjax = document.querySelector('#error-ajax');
+        var errorAjax = document.querySelector("#error-ajax");
 
-        if(xhr.status == 200){
+        if (xhr.status == 200) {
             errorAjax.classList.add('hideName');
-            var resp = xhr.responseText;
-            var patients = JSON.parse(resp);
-            console.log(patients)
-    
-            patients.forEach((patient) => {
-                console.log(patient)
-                addPatientTable(patient);
-            });
-        }else{
-            console.log(xhr.status);
-            console.log(xhr.responseText);
+            var resposta = xhr.responseText;
+            var pacientes = JSON.parse(resposta);
 
+            pacientes.forEach(function(pacient) {
+                addPatientTable(pacient);
+            });
+        } else {
             errorAjax.classList.remove('hideName');
         }
-        
     });
-    
-    xhr.send();''
 
+    xhr.send();
 });

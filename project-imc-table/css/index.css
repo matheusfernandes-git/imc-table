@@ -200,6 +200,10 @@ button:hover{
 	display: none;
 }
 
+.obesidade-grave{
+	color: red;
+}
+
 @media (max-width: 1024px){
 
 	header h1{

@@ -69,8 +69,10 @@ function validatingImc(imc, tdSituation){
         tdSituation.textContent = 'SOBREPESO'
     }else if(imc > 30.0 && imc < 39.9){
         tdSituation.textContent = 'OBESIDADE'
+        tdSituation.classList.add('obesidade-grave');
     }else{
         tdSituation.textContent = 'OBESIDADE GRAVE'
+        tdSituation.classList.add('obesidade-grave');
     }
     }
 }
